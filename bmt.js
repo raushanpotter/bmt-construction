@@ -123,30 +123,14 @@ mq.addEventListener('change', () => {
 startTestiAuto();
 
 /* ── 7. Contact form ── */
-const contactForm   = document.getElementById('contactForm');
-const formSuccess   = document.getElementById('formSuccess');
-const submitBtn     = document.getElementById('submitBtn');
+const contactForm = document.getElementById('contactForm');
+const submitBtn   = document.getElementById('submitBtn');
 
 contactForm.addEventListener('submit', e => {
-  e.preventDefault();
-  if (!contactForm.checkValidity()) { contactForm.reportValidity(); return; }
-
+  if (!contactForm.checkValidity()) { contactForm.reportValidity(); e.preventDefault(); return; }
+  // Allow real POST to Formsubmit.co — just show sending state
   submitBtn.disabled    = true;
-  submitBtn.textContent = 'Sending…';
-
-  setTimeout(() => {
-    formSuccess.style.display = 'block';
-    submitBtn.textContent     = 'Message Sent ✓';
-    submitBtn.style.background = '#16a34a';
-    contactForm.reset();
-
-    setTimeout(() => {
-      formSuccess.style.display  = 'none';
-      submitBtn.disabled         = false;
-      submitBtn.textContent      = 'Send Message';
-      submitBtn.style.background = '';
-    }, 5000);
-  }, 1200);
+  submitBtn.textContent = 'Sending… ✉️';
 });
 
 /* ── 8. Back to top ── */
