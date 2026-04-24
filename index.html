@@ -285,27 +285,36 @@
           </div>
         </div>
       </div>
-      <form class="contact-form" id="contactForm" novalidate>
+      <form class="contact-form" id="contactForm"
+            action="https://formsubmit.co/raushanpotter1@gmail.com"
+            method="POST">
+
+        <!-- Formsubmit.co hidden config -->
+        <input type="hidden" name="_subject" value="New Inquiry – BMT Construction Website" />
+        <input type="hidden" name="_next" value="https://raushanpotter.github.io/bmt-construction/" />
+        <input type="hidden" name="_captcha" value="false" />
+        <!-- Honeypot spam protection -->
+        <input type="text" name="_honey" style="display:none" />
+
         <div class="form-row">
           <div class="form-group">
             <label for="fname">Full Name</label>
-            <input type="text" id="fname" name="fname" placeholder="Your Name" required />
+            <input type="text" id="fname" name="name" placeholder="Your Name" required />
           </div>
           <div class="form-group">
             <label for="femail">Email</label>
-            <input type="email" id="femail" name="femail" placeholder="you@email.com" required />
+            <input type="email" id="femail" name="email" placeholder="you@email.com" required />
           </div>
         </div>
         <div class="form-group">
           <label for="fsubject">Subject</label>
-          <input type="text" id="fsubject" name="fsubject" placeholder="Project Inquiry" />
+          <input type="text" id="fsubject" name="subject" placeholder="Project Inquiry" />
         </div>
         <div class="form-group">
           <label for="fmsg">Message</label>
-          <textarea id="fmsg" name="fmsg" rows="5" placeholder="Tell us about your project..." required></textarea>
+          <textarea id="fmsg" name="message" rows="5" placeholder="Tell us about your project..." required></textarea>
         </div>
         <button type="submit" class="btn btn-primary btn-full" id="submitBtn">Send Message</button>
-        <p class="form-success" id="formSuccess">✅ Your message has been sent! We'll be in touch soon.</p>
       </form>
     </div>
   </section>
